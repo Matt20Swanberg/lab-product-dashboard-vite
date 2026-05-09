@@ -1,3 +1,46 @@
-/* TODO: Style the product card container */
+/* Base card styling */
+.card {
+  border: 4px;
+  padding: 16px 8px;
+  margin: 1.5rem;
+  border-radius: 8px;
+  background-color: white;
+}
 
-/* TODO: Add special styling for out-of-stock products */
+/* Styling for unavailable products */
+.outOfStockClass {
+  background-color: rgba(128, 128, 128, 0.2);
+  border-color: #555;
+}
+
+/* Stock availability text colors */
+.inStockText {
+  color: green;
+  font-weight: bold;
+}
+
+.outOfStockText {
+  color: red;
+  font-weight: bold;
+}
+
+/* Image styling*/
+.productImage {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 8px;
+}
+
+/* Remove button styling */
+.removeButton {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  ;
+}
+
+/* Hover state for remove button */
+.removeButton:hover {
+  background-color: #ffffff;
+  transition: background-color ease;
+  color: rgb(255, 0, 0)
+}

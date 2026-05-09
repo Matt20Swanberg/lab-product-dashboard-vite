@@ -1,0 +1,63 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Product Dashboard Logo</title>
+  <desc id="desc">A shopping bag with dashboard bars and an availability checkmark.</desc>
+
+  <defs>
+    <linearGradient id="bagGradient" x1="120" y1="120" x2="390" y2="410" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1f2933"/>
+      <stop offset="1" stop-color="#0b1117"/>
+    </linearGradient>
+
+    <linearGradient id="greenBar" x1="318" y1="210" x2="318" y2="390" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7CFF3A"/>
+      <stop offset="1" stop-color="#0A9F38"/>
+    </linearGradient>
+
+    <linearGradient id="yellowBar" x1="256" y1="250" x2="256" y2="390" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFE84A"/>
+      <stop offset="1" stop-color="#FFA600"/>
+    </linearGradient>
+
+    <linearGradient id="redBar" x1="194" y1="290" x2="194" y2="390" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF4A4A"/>
+      <stop offset="1" stop-color="#D71920"/>
+    </linearGradient>
+
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="96" fill="#151a1f"/>
+
+  <g filter="url(#softShadow)">
+    <!-- Shopping bag body -->
+    <path d="M132 172H380L408 402C411 428 392 448 366 448H146C120 448 101 428 104 402L132 172Z" fill="url(#bagGradient)" stroke="#27313a" stroke-width="8"/>
+
+    <!-- Bag handle -->
+    <path d="M176 174C180 90 332 90 336 174" fill="none" stroke="#24313a" stroke-width="26" stroke-linecap="round"/>
+    <path d="M204 174C207 122 305 122 308 174" fill="none" stroke="#151a1f" stroke-width="18" stroke-linecap="round"/>
+
+    <!-- Dashboard screen -->
+    <rect x="92" y="228" width="328" height="154" rx="18" fill="#1e2830" stroke="#0a0f14" stroke-width="8"/>
+    <rect x="112" y="266" width="124" height="88" rx="6" fill="#2f3b44"/>
+
+    <!-- Window dots -->
+    <circle cx="126" cy="248" r="10" fill="#7CFF3A"/>
+    <circle cx="154" cy="248" r="10" fill="#FFD136"/>
+    <circle cx="182" cy="248" r="10" fill="#FF3434"/>
+
+    <!-- Chart bars -->
+    <rect x="178" y="304" width="54" height="98" rx="10" fill="url(#redBar)"/>
+    <rect x="242" y="270" width="54" height="132" rx="10" fill="url(#yellowBar)"/>
+    <rect x="306" y="232" width="54" height="170" rx="10" fill="url(#greenBar)"/>
+
+    <!-- Chart base -->
+    <rect x="108" y="398" width="304" height="18" rx="7" fill="#0d151b"/>
+
+    <!-- Availability check -->
+    <circle cx="384" cy="200" r="58" fill="#16a34a" stroke="#78ff64" stroke-width="6"/>
+    <path d="M356 198L376 218L414 176" fill="none" stroke="#0b3b1f" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+    <path d="M356 198L376 218L414 176" fill="none" stroke="#b7ff8a" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

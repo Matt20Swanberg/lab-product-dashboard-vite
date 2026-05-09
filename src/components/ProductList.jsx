@@ -1,12 +1,25 @@
 import React from 'react';
 import ProductCard from './ProductCard';
 
-const ProductList = ({ products }) => {
-  // TODO: Check if the product list is empty and display a message if needed
+// Renders a list of ProductCard components
+const ProductList = ({ products, onRemoveProduct }) => {
+
+  // Display fallback message if no products exist
+  if (products.length === 0) {
+    return <p>No products available!</p>;
+  }
 
   return (
     <div>
-      {/* TODO: Iterate over the products array and render a ProductCard for each product */}
+
+      {/* Iterate through products and render ProductCard components */}
+      {products.map((product) => (
+        <ProductCard
+          key={product.id}
+          product={product}
+          onRemoveProduct={onRemoveProduct}
+        />
+      ))}
     </div>
   );
 };
