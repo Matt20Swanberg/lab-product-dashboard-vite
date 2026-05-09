@@ -1,120 +1,139 @@
-# Lab: Product Dashboard Manager
+# Product Dashboard
 
-## Introduction
+Product Dashboard is a React-based application built as part of a front-end lab focused on component architecture, state management, conditional rendering, event handling, and UI styling. The dashboard displays a list of products, allows users to filter products by stock availability, supports removing products from the page, and visually distinguishes in-stock and out-of-stock items.
 
-Your company is developing an **e-commerce platform**, and you have been assigned to create a **Product Dashboard**. This dashboard will dynamically display a list of products, allow users to filter products by availability, and apply **conditional rendering** to display different UI states.
+## Overview
 
-Your goal is to structure the React components, apply styles using **CSS Modules and Material UI**, and ensure that the dashboard passes all pre-written automated tests using **Jest and React Testing Library**.
+This project simulates a simple e-commerce product dashboard. Each product displays a name, price, image, and availability status. Users can filter the dashboard to view all products, only in-stock products, or only out-of-stock products. Products can also be removed from the dashboard using a Remove button.
 
----
+The application is built with reusable React components and styled with CSS Modules. It also includes conditional styling so unavailable products are visually different from available products.
 
-## **Challenge**
-1. Update Existing Element of the title
-2. Create New Elements for each product
+## Features
 
-## **Bonus Challenge**
-3. Delete Element
+- Displays products dynamically from an array of product objects
+- Renders reusable `ProductCard` components through `ProductList`
+- Shows each product’s name, price, image, and stock status
+- Filters products by availability using React state
+- Supports removing individual products from the dashboard
+- Applies different styling for out-of-stock products
+- Uses green status text for in-stock products
+- Uses red status text for out-of-stock products
+- Includes styled product cards with borders and spacing
+- Includes a styled Remove button with hover behavior
+- Supports a custom favicon/logo
 
----
+## Technologies Used
 
-## **Instructions**
+- React
+- JavaScript ES6+
+- CSS Modules
+- React Hooks
+- Vite
+- Jest
+- React Testing Library
 
-### **1️⃣ Fork and Clone the Repository**  
-1. Go to the provided **GitHub repository link**.
-2. **Fork** the repository to your GitHub account.
-3. **Clone** the forked repository to your local machine:
-   ```sh
-   git clone <your-forked-repository-url>
-   cd product-dashboard
-   ```
-4. Open the project in **VSCode**.
-5. Run the following command to install all necessary dependencies:
-   ```sh
-   npm install
-   ```
+## Project Structure
 
-### **2️⃣ Update Existing Element**
-- Modify the existing **header** element to display the **Product Dashboard title**.
-- Select the **DOM element** with the ID of `header`.
-- Store it in a variable called `dashboardTitle`.
-- Change the **textContent** of `dashboardTitle` to **"Product Dashboard"**.
-
-### **3️⃣ Create New Elements for Each Product**
-- Loop through every product in the dataset.
-- Each product is stored in an **array**.
-- Inside the loop, create and configure the following **new elements**:
-  - **`div` element (`productContainer`)** to hold product details.
-  - **`h3` element (`productTitle`)** to display the product name.
-  - **`p` element (`productPrice`)** to show the product's price.
-  - **`p` element (`productAvailability`)** to indicate if the product is **in stock or out of stock**.
-  - **`img` element (`productImage`)** to display the product image.
-
-### **4️⃣ Append Elements to the DOM**
-- Select the element with the ID `product-list` and store it in a variable called `productList`.
-- Append `productTitle`, `productPrice`, `productAvailability`, and `productImage` to `productContainer`.
-- Append `productContainer` to `productList`.
-
-### **5️⃣ Implement Conditional Rendering**
-- Products that are **out of stock** should be **styled differently**.
-- Use **CSS Modules** to apply a different background color to out-of-stock items.
-
----
-
-## **Bonus Challenge: Delete Element**
-- Implement a feature that allows users to **remove a product** from the dashboard.
-- Add a **"Remove" button** next to each product.
-- When clicked, the button should **delete the product element** from the page.
-
----
-
-## **BONUS: Remove Elements from the DOM**
-
-We know how to add elements and change their attributes. What if we want to
-remove an element from a page?
-
-### `removeChild()`
-
-We use `removeChild()`, as you might guess, to remove a particular child of an
-element:
-
-```js
-someElement.removeChild(someChildElement);
+```text
+src/
+├── assets/
+│   ├── laptop.png
+│   ├── phone.png
+│   └── tablet.png
+├── components/
+│   ├── ProductCard.jsx
+│   └── ProductList.jsx
+├── styles/
+│   └── ProductCard.module.css
+├── App.jsx
+└── main.js
 ```
 
-Let's take a look at a more complex example:
+## Components
 
-```js
-const productList = document.getElementById("product-list");
-const firstProduct = productList.querySelector("div:first-child");
-productList.removeChild(firstProduct);
+### App.jsx
+
+`App.jsx` is the main application component. It stores the product data in state, tracks the selected filter, handles product removal, and passes filtered products to the `ProductList` component.
+
+### ProductList.jsx
+
+`ProductList.jsx` receives the filtered product array from `App.jsx`. It checks whether products are available to display and maps over the product list to render one `ProductCard` for each product.
+
+### ProductCard.jsx
+
+`ProductCard.jsx` displays the details for a single product. It renders the product image, name, price, availability status, and Remove button. It also applies conditional styling when a product is out of stock.
+
+### ProductCard.module.css
+
+`ProductCard.module.css` contains the styling for product cards, out-of-stock products, stock status text, product images, and the Remove button.
+
+## Screenshot
+
+Add your application screenshot below after saving it to your project.
+
+```md
+![Product Dashboard Screenshot](./screenshots/dashboard.png)
 ```
 
-Here you can see the power of `querySelector()`: we can use it to find the
-first product in the list. We then pass that element as the argument to our
-`removeChild` method, which removes it from the dashboard.
+Suggested folder structure:
 
-What if we want to remove the entire product list?
-
-### `element.remove()`
-
-We can just call `remove()` on the element itself:
-
-```js
-productList.remove();
+```text
+screenshots/
+└── dashboard.png
 ```
 
-And it's gone!
+## Installation
 
----
+Clone the repository:
 
-## **Resources**
+```bash
+git clone <https://github.com/Matt20Swanberg/lab-product-dashboard-vite>
+```
 
-- [React Documentation](https://react.dev)
-- [CSS Modules Documentation](https://github.com/css-modules/css-modules)
-- [Material UI Documentation](https://mui.com)
-- [Jest Testing Framework](https://jestjs.io/)
-- [React Testing Library](https://testing-library.com)
-- [document.createElement()](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
-- [append()](https://developer.mozilla.org/en-US/docs/Web/API/Element/append)
-- [removeChild()](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild)
-- [element.remove()](https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove)
+Navigate into the project directory:
+
+```bash
+cd product-dashboard
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+## Running the Application
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open the application in your browser. Vite commonly runs locally at:
+
+```text
+http://localhost:5173
+```
+
+## Running Tests
+
+Run the test suite:
+
+```bash
+npm test
+```
+
+The application was built to satisfy the provided Jest and React Testing Library tests for rendering the dashboard title, displaying products, applying conditional styling, and removing products.
+
+## Future Improvements
+
+Potential future enhancements include product search, sorting, editing products, persistent storage, responsive mobile styling, dark mode, product categories, API integration, quantity tracking, and shopping cart functionality.
+
+## Author
+
+Created by Matthew Swanberg
+
+## License
+
+Created for course 4 mod 3 lab.
