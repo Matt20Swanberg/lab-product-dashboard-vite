@@ -69,9 +69,7 @@ src/
 
 ## Screenshot
 
-```md
 ![Product Dashboard Screenshot](./screenshots/dashboard.png)
-```
 
 ## Installation
 
