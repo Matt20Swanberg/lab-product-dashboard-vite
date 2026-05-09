@@ -69,17 +69,8 @@ src/
 
 ## Screenshot
 
-Add your application screenshot below after saving it to your project.
-
 ```md
 ![Product Dashboard Screenshot](./screenshots/dashboard.png)
-```
-
-Suggested folder structure:
-
-```text
-screenshots/
-└── dashboard.png
 ```
 
 ## Installation
